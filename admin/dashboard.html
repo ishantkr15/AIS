@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – Aryans Resource Portal</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="icon" href="../assets/img/logo.png">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" style="padding:0;">
+    <nav class="main-nav-bar" style="position:relative;">
+      <div class="nav-inner" style="justify-content:space-between;">
+        <a href="../index.html" class="logo-wrapper" style="gap:var(--space-3);">
+          <div class="logo-img-container" style="width:36px;height:36px;">
+            <img src="../assets/img/logo.png" alt="Logo" style="width:36px;height:36px;">
+          </div>
+          <div class="school-identity">
+            <span class="school-name" style="font-size:0.95rem;color:#fff;">Aryans International School</span>
+            <span class="school-details" style="color:rgba(255,255,255,0.4);font-size:0.7rem;">Admin Panel</span>
+          </div>
+        </a>
+        <div class="main-nav" id="main-nav">
+          <a href="../index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> View Site</a>
+          <a href="dashboard.html" class="active"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+          <a href="categories.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Categories</a>
+          <a href="#" id="logout-btn" style="background:var(--error)!important;border-radius:var(--radius-sm);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- ADMIN LAYOUT -->
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Admin Panel</h3>
+        <p>Manage resources &amp; content</p>
+      </div>
+      <nav class="admin-nav">
+        <a href="dashboard.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+        <a href="categories.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Categories</a>
+        <a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> View Site</a>
+        <a href="#" id="sidebar-logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <!-- Page Header -->
+      <div class="admin-page-header">
+        <div>
+          <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</h1>
+          <p class="subtitle">Manage all your resources and news.</p>
+        </div>
+        <div style="display:flex; gap:var(--space-3);">
+          <button class="btn btn-primary" id="add-resource-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add Resource</button>
+          <button class="btn btn-accent" id="add-news-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add News</button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="admin-stats" id="admin-stats">
+        <div class="stat-card">
+          <div class="stat-card-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+          <div class="stat-card-info"><h4>Resources</h4><div class="stat-value" id="admin-stat-resources">0</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+          <div class="stat-card-info"><h4>Classes</h4><div class="stat-value" id="admin-stat-classes">0</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+          <div class="stat-card-info"><h4>Subjects</h4><div class="stat-value" id="admin-stat-subjects">0</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/></svg></div>
+          <div class="stat-card-info"><h4>News</h4><div class="stat-value" id="admin-stat-news">0</div></div>
+        </div>
+      </div>
+
+      <!-- Resources Table -->
+      <div class="admin-table-container" id="resources-table-container">
+        <div class="admin-table-header">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg> All Resources</h3>
+          <div class="search-bar" style="width:260px;">
+            <div class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <input type="text" id="admin-search" placeholder="Search resources...">
+          </div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead><tr><th>Title</th><th>Class</th><th>Subject</th><th>Type</th><th>Link</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody id="resources-tbody">
+              <tr><td colspan="7" style="text-align:center;padding:var(--space-8);">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- News Table -->
+      <div class="admin-table-container" style="margin-top:var(--space-8);">
+        <div class="admin-table-header">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/></svg> All News / Announcements</h3>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead><tr><th>Title</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody id="news-tbody">
+              <tr><td colspan="3" style="text-align:center;padding:var(--space-8);">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ADD/EDIT RESOURCE MODAL -->
+  <div class="modal-overlay" id="resource-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="resource-modal-title">Add Resource</h2>
+        <button class="modal-close" id="close-resource-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="resource-form">
+          <input type="hidden" id="resource-edit-id">
+          <div class="form-group">
+            <label for="res-title">Title *</label>
+            <input type="text" id="res-title" placeholder="e.g., Trigonometry Worksheet - Basic Identities" required>
+          </div>
+          <div class="form-group">
+            <label for="res-description">Description</label>
+            <textarea id="res-description" placeholder="Brief description of the resource..."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-class">Class *</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <select id="res-class" required style="flex:1;"><option value="">Select Class</option></select>
+                <button type="button" class="btn btn-secondary btn-sm" id="quick-add-class" style="padding:10px 12px;cursor:pointer;" title="Quick Add Class">+</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="res-subject">Subject *</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <select id="res-subject" required disabled style="flex:1;"><option value="">Select class first</option></select>
+                <button type="button" class="btn btn-secondary btn-sm" id="quick-add-subject" style="padding:10px 12px;cursor:pointer;" disabled title="Quick Add Subject">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-chapter">Chapter</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <select id="res-chapter" disabled style="flex:1;"><option value="">Select subject first</option></select>
+                <button type="button" class="btn btn-secondary btn-sm" id="quick-add-chapter" style="padding:10px 12px;cursor:pointer;" disabled title="Quick Add Chapter">+</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="res-type">Type *</label>
+              <select id="res-type" required>
+                <option value="">Select Type</option>
+                <option value="Worksheet">Worksheet</option>
+                <option value="PYQ">PYQ</option>
+                <option value="Sample Paper">Sample Paper</option>
+                <option value="Notes">Notes</option>
+                <option value="Important Paper">Important Paper</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Google Drive Link -->
+          <div class="form-group">
+            <label for="res-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+              Google Drive Link *
+            </label>
+            <input type="url" id="res-link" placeholder="https://drive.google.com/file/d/.../view?usp=sharing" required>
+            <span class="form-hint">Paste a shareable Google Drive link. Make sure it's set to "Anyone with the link can view".</span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancel-resource">Cancel</button>
+        <button class="btn btn-primary" id="save-resource">Save Resource</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD/EDIT NEWS MODAL -->
+  <div class="modal-overlay" id="news-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="news-modal-title">Add News</h2>
+        <button class="modal-close" id="close-news-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="news-form">
+          <input type="hidden" id="news-edit-id">
+          <div class="form-group">
+            <label for="news-title">Title *</label>
+            <input type="text" id="news-title" placeholder="e.g., Annual Day Celebration 2026" required>
+          </div>
+          <div class="form-group">
+            <label for="news-content">Content *</label>
+            <textarea id="news-content" placeholder="News content..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="news-date">Date</label>
+            <input type="date" id="news-date">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancel-news">Cancel</button>
+        <button class="btn btn-primary" id="save-news">Save News</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/icons.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    /* ======= ADMIN DASHBOARD ======= */
+    let classesData = {};
+    let subjectsData = {};
+    let chaptersData = {};
+    let allResources = [];
+    let allNews = [];
+
+
+    // Auth guard
+    auth.onAuthStateChanged(user => {
+      if (!user) { window.location.href = 'login.html'; return; }
+      init();
+    });
+
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', e => {
+      e.preventDefault();
+      auth.signOut().then(() => window.location.href = 'login.html');
+    });
+    document.getElementById('sidebar-logout').addEventListener('click', e => {
+      e.preventDefault();
+      auth.signOut().then(() => window.location.href = 'login.html');
+    });
+
+    async function init() {
+      await loadCategories();
+      listenStats();
+      listenResources();
+      listenNews();
+      bindModalEvents();
+    }
+
+    async function loadCategories() {
+      try {
+        const [cs, ss, chs] = await Promise.all([
+          db.ref('classes').once('value'),
+          db.ref('subjects').once('value'),
+          db.ref('chapters').once('value')
+        ]);
+        classesData = cs.val() || {};
+        subjectsData = ss.val() || {};
+        chaptersData = chs.val() || {};
+      } catch (err) {
+        console.error('Error loading categories:', err);
+      }
+      populateClassDropdown();
+    }
+
+    function populateClassDropdown() {
+      const sel = document.getElementById('res-class');
+      sel.innerHTML = '<option value="">Select Class</option>';
+      Object.entries(classesData)
+        .sort((a,b) => (a[1].order||0) - (b[1].order||0))
+        .forEach(([id, cls]) => {
+          sel.innerHTML += '<option value="'+id+'">'+escapeHtml(cls.name)+'</option>';
+        });
+    }
+
+    /* Cascading Dropdowns */
+    document.getElementById('res-class').addEventListener('change', function() {
+      const subSel = document.getElementById('res-subject');
+      const chSel = document.getElementById('res-chapter');
+      const addSubBtn = document.getElementById('quick-add-subject');
+      const addChBtn = document.getElementById('quick-add-chapter');
+      
+      subSel.innerHTML = '<option value="">Select Subject</option>';
+      chSel.innerHTML = '<option value="">Select Chapter</option>';
+      chSel.disabled = true;
+      if (addChBtn) addChBtn.disabled = true;
+
+      if (!this.value) { 
+        subSel.disabled = true; 
+        if (addSubBtn) addSubBtn.disabled = true;
+        return; 
+      }
+      
+      subSel.disabled = false;
+      if (addSubBtn) addSubBtn.disabled = false;
+
+      Object.entries(subjectsData)
+        .filter(([_,s]) => s.classId === this.value)
+        .sort((a,b) => (a[1].order||0) - (b[1].order||0))
+        .forEach(([id, sub]) => {
+          subSel.innerHTML += '<option value="'+id+'">'+escapeHtml(sub.name)+'</option>';
+        });
+    });
+
+    document.getElementById('res-subject').addEventListener('change', function() {
+      const chSel = document.getElementById('res-chapter');
+      const addChBtn = document.getElementById('quick-add-chapter');
+      
+      chSel.innerHTML = '<option value="">Select Chapter</option>';
+      
+      if (!this.value) { 
+        chSel.disabled = true; 
+        if (addChBtn) addChBtn.disabled = true;
+        return; 
+      }
+      
+      chSel.disabled = false;
+      if (addChBtn) addChBtn.disabled = false;
+
+      Object.entries(chaptersData)
+        .filter(([_,c]) => c.subjectId === this.value)
+        .sort((a,b) => (a[1].order||0) - (b[1].order||0))
+        .forEach(([id, ch]) => {
+          chSel.innerHTML += '<option value="'+id+'">'+escapeHtml(ch.name)+'</option>';
+        });
+    });
+
+    /* Stats */
+    function listenStats() {
+      db.ref('resources').on('value', s => {
+        document.getElementById('admin-stat-resources').textContent = s.exists() ? Object.keys(s.val()).length : 0;
+      });
+      db.ref('classes').on('value', s => {
+        document.getElementById('admin-stat-classes').textContent = s.exists() ? Object.keys(s.val()).length : 0;
+      });
+      db.ref('subjects').on('value', s => {
+        document.getElementById('admin-stat-subjects').textContent = s.exists() ? Object.keys(s.val()).length : 0;
+      });
+      db.ref('news').on('value', s => {
+        document.getElementById('admin-stat-news').textContent = s.exists() ? Object.keys(s.val()).length : 0;
+      });
+    }
+
+    /* Resources Table */
+    function listenResources() {
+      db.ref('resources').on('value', snap => {
+        allResources = [];
+        if (snap.exists()) snap.forEach(child => { allResources.push({ id: child.key, ...child.val() }); });
+        // Sort by dateAdded descending
+        allResources.sort((a, b) => {
+          const da = a.dateAdded || '0000-00-00';
+          const db2 = b.dateAdded || '0000-00-00';
+          return db2.localeCompare(da);
+        });
+        renderResourcesTable(allResources);
+      });
+      document.getElementById('admin-search').addEventListener('input', function() {
+        const q = this.value.toLowerCase().trim();
+        renderResourcesTable(q ? allResources.filter(r => (r.title||'').toLowerCase().includes(q) || (r.description||'').toLowerCase().includes(q)) : allResources);
+      });
+    }
+
+    function renderResourcesTable(resources) {
+      const tbody = document.getElementById('resources-tbody');
+      if (resources.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:var(--space-8);color:var(--gray-400);">No resources found.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = resources.map(r => {
+        const linkIcon = r.googleDriveLink ? '<a href="'+escapeHtml(r.googleDriveLink)+'" target="_blank" style="color:var(--primary-600);font-size:0.78rem;text-decoration:none;" title="Open in Drive">&#x1F517; Drive</a>' : '<span style="color:var(--gray-400);font-size:0.78rem;">None</span>';
+        return '<tr><td><strong>'+escapeHtml(r.title)+'</strong></td><td>'+escapeHtml(r.className||'-')+'</td><td>'+escapeHtml(r.subjectName||'-')+'</td><td><span class="resource-type-badge '+getTypeBadgeClass(r.type)+'" style="font-size:0.75rem;">'+escapeHtml(r.type||'-')+'</span></td><td>'+linkIcon+'</td><td>'+formatDate(r.dateAdded)+'</td><td><div class="actions"><button class="btn btn-primary btn-sm" onclick="editResource(\''+r.id+'\')">Edit</button><button class="btn btn-danger btn-sm" onclick="deleteResource(\''+r.id+'\',\''+escapeHtml(r.title).replace(/'/g,"\\\'")+'\')">Delete</button></div></td></tr>';
+      }).join('');
+    }
+
+    /* News Table */
+    function listenNews() {
+      db.ref('news').on('value', snap => {
+        allNews = [];
+        if (snap.exists()) snap.forEach(child => { allNews.push({ id: child.key, ...child.val() }); });
+        // Sort by date descending
+        allNews.sort((a, b) => {
+          const da = a.date || '0000-00-00';
+          const db2 = b.date || '0000-00-00';
+          return db2.localeCompare(da);
+        });
+        renderNewsTable(allNews);
+      });
+    }
+
+    function renderNewsTable(items) {
+      const tbody = document.getElementById('news-tbody');
+      if (items.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:var(--space-8);color:var(--gray-400);">No news items.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = items.map(n => '<tr><td><strong>'+escapeHtml(n.title)+'</strong></td><td>'+formatDate(n.date)+'</td><td><div class="actions"><button class="btn btn-primary btn-sm" onclick="editNews(\''+n.id+'\')">Edit</button><button class="btn btn-danger btn-sm" onclick="deleteNews(\''+n.id+'\',\''+escapeHtml(n.title).replace(/'/g,"\\\'")+'\')">Delete</button></div></td></tr>').join('');
+    }
+
+    /* Modal Management */
+    function bindModalEvents() {
+      const resModal = document.getElementById('resource-modal');
+      document.getElementById('add-resource-btn').addEventListener('click', () => openResourceModal());
+      document.getElementById('close-resource-modal').addEventListener('click', () => closeModal(resModal));
+      document.getElementById('cancel-resource').addEventListener('click', () => closeModal(resModal));
+      document.getElementById('save-resource').addEventListener('click', saveResource);
+      resModal.addEventListener('click', (e) => { if (e.target === resModal) closeModal(resModal); });
+
+      const newsModal = document.getElementById('news-modal');
+      document.getElementById('add-news-btn').addEventListener('click', () => openNewsModal());
+      document.getElementById('close-news-modal').addEventListener('click', () => closeModal(newsModal));
+      document.getElementById('cancel-news').addEventListener('click', () => closeModal(newsModal));
+      document.getElementById('save-news').addEventListener('click', saveNews);
+      newsModal.addEventListener('click', (e) => { if (e.target === newsModal) closeModal(newsModal); });
+      
+      bindQuickAddEvents();
+    }
+
+    function openModal(el) { el.classList.add('active'); }
+    function closeModal(el) { el.classList.remove('active'); }
+
+
+
+    function bindQuickAddEvents() {
+      document.getElementById('quick-add-class').addEventListener('click', async () => {
+        const name = prompt('Enter new Class name (e.g., Class XI):');
+        if (!name || !name.trim()) return;
+        const order = parseInt(prompt('Enter order/number (e.g., 11):')) || 0;
+        const id = generateId();
+        try {
+          await db.ref('classes/' + id).set({ name: name.trim(), order });
+          showToast('Class added!', 'success');
+          await loadCategories(); // Reload cache
+          document.getElementById('res-class').value = id;
+          document.getElementById('res-class').dispatchEvent(new Event('change'));
+        } catch (err) { showToast('Error: ' + err.message, 'error'); }
+      });
+
+      document.getElementById('quick-add-subject').addEventListener('click', async () => {
+        const classId = document.getElementById('res-class').value;
+        if (!classId) return;
+        const name = prompt('Enter new Subject name (e.g., Physics):');
+        if (!name || !name.trim()) return;
+        const order = parseInt(prompt('Enter order:')) || 0;
+        const id = generateId();
+        try {
+          await db.ref('subjects/' + id).set({ name: name.trim(), classId, order });
+          showToast('Subject added!', 'success');
+          await loadCategories();
+          document.getElementById('res-class').value = classId;
+          document.getElementById('res-class').dispatchEvent(new Event('change'));
+          setTimeout(() => {
+            document.getElementById('res-subject').value = id;
+            document.getElementById('res-subject').dispatchEvent(new Event('change'));
+          }, 120);
+        } catch (err) { showToast('Error: ' + err.message, 'error'); }
+      });
+
+      document.getElementById('quick-add-chapter').addEventListener('click', async () => {
+        const classId = document.getElementById('res-class').value;
+        const subjectId = document.getElementById('res-subject').value;
+        if (!subjectId) return;
+        const name = prompt('Enter new Chapter name:');
+        if (!name || !name.trim()) return;
+        const order = parseInt(prompt('Enter order:')) || 0;
+        const id = generateId();
+        try {
+          await db.ref('chapters/' + id).set({ name: name.trim(), subjectId, order });
+          showToast('Chapter added!', 'success');
+          await loadCategories();
+          document.getElementById('res-class').value = classId;
+          document.getElementById('res-class').dispatchEvent(new Event('change'));
+          setTimeout(() => {
+            document.getElementById('res-subject').value = subjectId;
+            document.getElementById('res-subject').dispatchEvent(new Event('change'));
+            setTimeout(() => {
+              document.getElementById('res-chapter').value = id;
+            }, 120);
+          }, 120);
+        } catch (err) { showToast('Error: ' + err.message, 'error'); }
+      });
+    }
+
+    /* Resource CRUD */
+    function openResourceModal(resource = null) {
+      const modal = document.getElementById('resource-modal');
+      document.getElementById('resource-modal-title').textContent = resource ? 'Edit Resource' : 'Add Resource';
+      document.getElementById('resource-edit-id').value = resource ? resource.id : '';
+      document.getElementById('res-title').value = resource ? resource.title : '';
+      document.getElementById('res-description').value = resource ? (resource.description || '') : '';
+      document.getElementById('res-type').value = resource ? resource.type : '';
+      document.getElementById('res-link').value = resource ? (resource.googleDriveLink || '') : '';
+      
+      const classSel = document.getElementById('res-class');
+      classSel.value = resource ? resource.classId : '';
+      classSel.dispatchEvent(new Event('change'));
+      if (resource && resource.subjectId) {
+        setTimeout(() => {
+          document.getElementById('res-subject').value = resource.subjectId;
+          document.getElementById('res-subject').dispatchEvent(new Event('change'));
+          if (resource.chapterId) setTimeout(() => { document.getElementById('res-chapter').value = resource.chapterId; }, 50);
+        }, 50);
+      }
+      openModal(modal);
+    }
+
+    async function saveResource() {
+      const editId = document.getElementById('resource-edit-id').value;
+      const title = document.getElementById('res-title').value.trim();
+      const description = document.getElementById('res-description').value.trim();
+      const classId = document.getElementById('res-class').value;
+      const subjectId = document.getElementById('res-subject').value;
+      const chapterId = document.getElementById('res-chapter').value;
+      const type = document.getElementById('res-type').value;
+      const googleDriveLink = document.getElementById('res-link').value.trim();
+
+      if (!title || !classId || !subjectId || !type) { 
+        showToast('Please fill all required fields (Title, Class, Subject, Type).', 'error'); 
+        return; 
+      }
+      if (!googleDriveLink) {
+        showToast('Please provide a Google Drive link.', 'error');
+        return;
+      }
+
+      const className = classesData[classId] ? classesData[classId].name : '';
+      const subjectName = subjectsData[subjectId] ? subjectsData[subjectId].name : '';
+      const chapterName = chapterId && chaptersData[chapterId] ? chaptersData[chapterId].name : '';
+
+      const saveBtn = document.getElementById('save-resource');
+      saveBtn.disabled = true; saveBtn.textContent = 'Saving...';
+
+      try {
+        const data = { 
+          title, 
+          description, 
+          classId, 
+          subjectId, 
+          chapterId: chapterId || '', 
+          className, 
+          subjectName, 
+          chapterName, 
+          type, 
+          googleDriveLink,
+          dateAdded: editId ? (allResources.find(r=>r.id===editId)?.dateAdded || getCurrentDate()) : getCurrentDate(), 
+          lastModified: getCurrentDate() 
+        };
+
+        if (editId) { 
+          await db.ref('resources/' + editId).update(data); 
+          showToast('Resource updated successfully!', 'success'); 
+        } else { 
+          await db.ref('resources/' + generateId()).set(data); 
+          showToast('Resource added successfully!', 'success'); 
+        }
+        closeModal(document.getElementById('resource-modal'));
+      } catch (err) { 
+        showToast('Error saving: ' + err.message, 'error'); 
+      }
+      saveBtn.disabled = false; saveBtn.textContent = 'Save Resource';
+    }
+
+    function editResource(id) { const r = allResources.find(r => r.id === id); if (r) openResourceModal(r); }
+
+    function deleteResource(id, title) {
+      if (!confirm('Are you sure you want to delete "'+title+'"?')) return;
+      db.ref('resources/' + id).remove().then(() => showToast('Resource deleted.', 'success')).catch(err => showToast('Error: ' + err.message, 'error'));
+    }
+
+    /* News CRUD */
+    function openNewsModal(item = null) {
+      const modal = document.getElementById('news-modal');
+      document.getElementById('news-modal-title').textContent = item ? 'Edit News' : 'Add News';
+      document.getElementById('news-edit-id').value = item ? item.id : '';
+      document.getElementById('news-title').value = item ? item.title : '';
+      document.getElementById('news-content').value = item ? (item.content || '') : '';
+      document.getElementById('news-date').value = item ? item.date : getCurrentDate();
+      openModal(modal);
+    }
+
+    async function saveNews() {
+      const editId = document.getElementById('news-edit-id').value;
+      const title = document.getElementById('news-title').value.trim();
+      const content = document.getElementById('news-content').value.trim();
+      const date = document.getElementById('news-date').value || getCurrentDate();
+      if (!title || !content) { showToast('Please fill title and content.', 'error'); return; }
+      const data = { title, content, date };
+      const saveBtn = document.getElementById('save-news');
+      saveBtn.disabled = true; saveBtn.textContent = 'Saving...';
+      try {
+        if (editId) { await db.ref('news/' + editId).update(data); showToast('News updated!', 'success'); }
+        else { await db.ref('news/' + generateId()).set(data); showToast('News added!', 'success'); }
+        closeModal(document.getElementById('news-modal'));
+      } catch (err) { showToast('Error: ' + err.message, 'error'); }
+      saveBtn.disabled = false; saveBtn.textContent = 'Save News';
+    }
+
+    function editNews(id) { const item = allNews.find(n => n.id === id); if (item) openNewsModal(item); }
+
+    function deleteNews(id, title) {
+      if (!confirm('Delete news "'+title+'"?')) return;
+      db.ref('news/' + id).remove().then(() => showToast('News deleted.', 'success')).catch(err => showToast('Error: ' + err.message, 'error'));
+    }
+  </script>
+</body>
+</html>

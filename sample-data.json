@@ -1,0 +1,132 @@
+{
+  "classes": {
+    "class-6": { "name": "Class VI", "order": 6 },
+    "class-7": { "name": "Class VII", "order": 7 },
+    "class-8": { "name": "Class VIII", "order": 8 },
+    "class-9": { "name": "Class IX", "order": 9 },
+    "class-10": { "name": "Class X", "order": 10 },
+    "class-11": { "name": "Class XI", "order": 11 },
+    "class-12": { "name": "Class XII", "order": 12 }
+  },
+  "subjects": {
+    "maths-10": { "name": "Mathematics", "classId": "class-10", "order": 1 },
+    "science-10": { "name": "Science", "classId": "class-10", "order": 2 },
+    "english-10": { "name": "English", "classId": "class-10", "order": 3 },
+    "sst-10": { "name": "Social Science", "classId": "class-10", "order": 4 },
+    "hindi-10": { "name": "Hindi", "classId": "class-10", "order": 5 },
+    "physics-12": { "name": "Physics", "classId": "class-12", "order": 1 },
+    "chemistry-12": { "name": "Chemistry", "classId": "class-12", "order": 2 },
+    "maths-12": { "name": "Mathematics", "classId": "class-12", "order": 3 },
+    "biology-12": { "name": "Biology", "classId": "class-12", "order": 4 },
+    "english-12": { "name": "English", "classId": "class-12", "order": 5 }
+  },
+  "chapters": {
+    "trig-maths-10": { "name": "Trigonometry", "subjectId": "maths-10", "order": 1 },
+    "algebra-maths-10": { "name": "Algebra", "subjectId": "maths-10", "order": 2 },
+    "geometry-maths-10": { "name": "Geometry", "subjectId": "maths-10", "order": 3 },
+    "statistics-maths-10": { "name": "Statistics & Probability", "subjectId": "maths-10", "order": 4 },
+    "chemical-reactions-sci-10": { "name": "Chemical Reactions & Equations", "subjectId": "science-10", "order": 1 },
+    "electricity-sci-10": { "name": "Electricity", "subjectId": "science-10", "order": 2 },
+    "light-sci-10": { "name": "Light – Reflection & Refraction", "subjectId": "science-10", "order": 3 },
+    "electrostatics-phy-12": { "name": "Electrostatics", "subjectId": "physics-12", "order": 1 },
+    "current-electricity-phy-12": { "name": "Current Electricity", "subjectId": "physics-12", "order": 2 },
+    "optics-phy-12": { "name": "Optics", "subjectId": "physics-12", "order": 3 }
+  },
+  "resources": {
+    "ws-trig-1": {
+      "title": "Trigonometry Worksheet – Basic Identities",
+      "description": "Practice worksheet covering all basic trigonometric identities, ratios, and their applications. Includes 25 objective and 10 subjective questions aligned with CBSE pattern.",
+      "type": "Worksheet",
+      "classId": "class-10",
+      "subjectId": "maths-10",
+      "chapterId": "trig-maths-10",
+      "className": "Class X",
+      "subjectName": "Mathematics",
+      "chapterName": "Trigonometry",
+      "googleDriveLink": "https://drive.google.com/file/d/EXAMPLE_ID_1/view?usp=sharing",
+      "dateAdded": "2025-03-24"
+    },
+    "pyq-maths-10": {
+      "title": "Mathematics PYQ – CBSE 2024 Board",
+      "description": "Previous year question paper of CBSE Class X Mathematics Board Exam 2024 with marking scheme. Standard pattern – 80 marks.",
+      "type": "PYQ",
+      "classId": "class-10",
+      "subjectId": "maths-10",
+      "chapterId": "",
+      "className": "Class X",
+      "subjectName": "Mathematics",
+      "chapterName": "",
+      "googleDriveLink": "https://drive.google.com/file/d/EXAMPLE_ID_2/view?usp=sharing",
+      "dateAdded": "2025-03-22"
+    },
+    "sp-science-10": {
+      "title": "Science Sample Paper – Term 2",
+      "description": "Full-length sample paper for Class X Science Term 2, covering Physics, Chemistry and Biology. Includes answer key and marking scheme.",
+      "type": "Sample Paper",
+      "classId": "class-10",
+      "subjectId": "science-10",
+      "chapterId": "",
+      "className": "Class X",
+      "subjectName": "Science",
+      "chapterName": "",
+      "googleDriveLink": "https://drive.google.com/file/d/EXAMPLE_ID_3/view?usp=sharing",
+      "dateAdded": "2025-03-20"
+    },
+    "ws-electricity-10": {
+      "title": "Electricity Chapter Worksheet",
+      "description": "Comprehensive worksheet on Electricity chapter with numericals, circuit diagrams, and Ohm's law problems. Suitable for exam revision.",
+      "type": "Worksheet",
+      "classId": "class-10",
+      "subjectId": "science-10",
+      "chapterId": "electricity-sci-10",
+      "className": "Class X",
+      "subjectName": "Science",
+      "chapterName": "Electricity",
+      "googleDriveLink": "https://drive.google.com/file/d/EXAMPLE_ID_4/view?usp=sharing",
+      "dateAdded": "2025-03-18"
+    },
+    "notes-electrostatics-12": {
+      "title": "Electrostatics – Detailed Notes",
+      "description": "Comprehensive notes on Electrostatics chapter covering Coulomb's law, electric field, potential, Gauss's theorem, and capacitance with solved examples.",
+      "type": "Notes",
+      "classId": "class-12",
+      "subjectId": "physics-12",
+      "chapterId": "electrostatics-phy-12",
+      "className": "Class XII",
+      "subjectName": "Physics",
+      "chapterName": "Electrostatics",
+      "googleDriveLink": "https://drive.google.com/file/d/EXAMPLE_ID_5/view?usp=sharing",
+      "dateAdded": "2025-03-15"
+    },
+    "imp-physics-12": {
+      "title": "Physics Important Questions – Board 2025",
+      "description": "Collection of most important and expected questions for CBSE Class XII Physics Board Exam 2025. Curated by experienced faculty.",
+      "type": "Important Paper",
+      "classId": "class-12",
+      "subjectId": "physics-12",
+      "chapterId": "",
+      "className": "Class XII",
+      "subjectName": "Physics",
+      "chapterName": "",
+      "googleDriveLink": "https://drive.google.com/file/d/EXAMPLE_ID_6/view?usp=sharing",
+      "dateAdded": "2025-03-10"
+    }
+  },
+  "news": {
+    "news-1": {
+      "title": "Annual Day Celebration 2025",
+      "content": "Aryans International School celebrated its Annual Day on 20th March 2025 with great enthusiasm. Students showcased their talents through cultural performances, dances, and dramatic presentations. The event was graced by distinguished guests and parents.",
+      "date": "2025-03-20"
+    },
+    "news-2": {
+      "title": "CBSE Board Exam 2025 – Best of Luck!",
+      "content": "We wish all our Class X and XII students the very best for their upcoming CBSE Board Examinations. Remember to stay focused, revise well, and manage your time effectively during the exam. Your teachers and the entire school community are proud of you!",
+      "date": "2025-03-01"
+    },
+    "news-3": {
+      "title": "New Study Resources Now Available",
+      "content": "We have uploaded new worksheets, PYQs, and sample papers for Class X and XII on the Resource Portal. Students are encouraged to download and practice regularly. All materials are aligned with the latest CBSE curriculum and exam pattern.",
+      "date": "2025-02-25"
+    }
+  }
+}

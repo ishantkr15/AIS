@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Categories – Aryans Resource Portal</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="icon" href="../assets/img/logo.png">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" style="padding:0;">
+    <nav class="main-nav-bar" style="position:relative;">
+      <div class="nav-inner" style="justify-content:space-between;">
+        <a href="../index.html" class="logo-wrapper" style="gap:var(--space-3);">
+          <div class="logo-img-container" style="width:36px;height:36px;">
+            <img src="../assets/img/logo.png" alt="Logo" style="width:36px;height:36px;">
+          </div>
+          <div class="school-identity">
+            <span class="school-name" style="font-size:0.95rem;color:#fff;">Aryans International School</span>
+            <span class="school-details" style="color:rgba(255,255,255,0.4);font-size:0.7rem;">Admin Panel</span>
+          </div>
+        </a>
+        <div class="main-nav" id="main-nav">
+          <a href="../index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> View Site</a>
+          <a href="dashboard.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+          <a href="categories.html" class="active"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Categories</a>
+          <a href="#" id="logout-btn" style="background:var(--error)!important;border-radius:var(--radius-sm);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Admin Panel</h3>
+        <p>Manage resources &amp; content</p>
+      </div>
+      <nav class="admin-nav">
+        <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+        <a href="categories.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Categories</a>
+        <a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> View Site</a>
+        <a href="#" id="sidebar-logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-page-header">
+        <div>
+          <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Category Management</h1>
+          <p class="subtitle">Manage Classes, Subjects &amp; Chapters. Changes reflect instantly on the portal.</p>
+        </div>
+      </div>
+
+      <!-- CLASSES -->
+      <div class="category-section">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg> Classes</h3>
+        <div class="category-list" id="classes-list"><p style="color:var(--gray-400);">Loading...</p></div>
+        <div class="add-category-form">
+          <input type="text" id="add-class-name" placeholder="e.g., Class X">
+          <input type="number" id="add-class-order" placeholder="Order (e.g., 10)" style="width:110px;">
+          <button class="btn btn-primary btn-sm" id="add-class-btn">Add Class</button>
+        </div>
+      </div>
+
+      <!-- SUBJECTS -->
+      <div class="category-section">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg> Subjects</h3>
+        <div style="margin-bottom:var(--space-4);">
+          <label style="font-size:0.85rem;font-weight:600;color:var(--gray-600);margin-right:var(--space-2);">Filter by Class:</label>
+          <select id="subject-class-filter" style="padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:0.88rem;">
+            <option value="">All Classes</option>
+          </select>
+        </div>
+        <div class="category-list" id="subjects-list"><p style="color:var(--gray-400);">Loading...</p></div>
+        <div class="add-category-form">
+          <select id="add-subject-class" style="width:150px;padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);"><option value="">Class</option></select>
+          <input type="text" id="add-subject-name" placeholder="e.g., Mathematics">
+          <input type="number" id="add-subject-order" placeholder="Order" style="width:80px;">
+          <button class="btn btn-primary btn-sm" id="add-subject-btn">Add Subject</button>
+        </div>
+      </div>
+
+      <!-- CHAPTERS -->
+      <div class="category-section">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg> Chapters</h3>
+        <div style="margin-bottom:var(--space-4);display:flex;gap:var(--space-3);flex-wrap:wrap;">
+          <div>
+            <label style="font-size:0.85rem;font-weight:600;color:var(--gray-600);margin-right:var(--space-2);">Class:</label>
+            <select id="chapter-class-filter" style="padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:0.88rem;"><option value="">All</option></select>
+          </div>
+          <div>
+            <label style="font-size:0.85rem;font-weight:600;color:var(--gray-600);margin-right:var(--space-2);">Subject:</label>
+            <select id="chapter-subject-filter" style="padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:0.88rem;" disabled><option value="">All</option></select>
+          </div>
+        </div>
+        <div class="category-list" id="chapters-list"><p style="color:var(--gray-400);">Loading...</p></div>
+        <div class="add-category-form">
+          <select id="add-chapter-subject" style="width:180px;padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);"><option value="">Subject</option></select>
+          <input type="text" id="add-chapter-name" placeholder="e.g., Trigonometry">
+          <input type="number" id="add-chapter-order" placeholder="Order" style="width:80px;">
+          <button class="btn btn-primary btn-sm" id="add-chapter-btn">Add Chapter</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/icons.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    let classesData = {}, subjectsData = {}, chaptersData = {};
+
+    auth.onAuthStateChanged(user => {
+      if (!user) { window.location.href = 'login.html'; return; }
+      init();
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', e => { e.preventDefault(); auth.signOut().then(() => window.location.href = 'login.html'); });
+    document.getElementById('sidebar-logout').addEventListener('click', e => { e.preventDefault(); auth.signOut().then(() => window.location.href = 'login.html'); });
+
+    function init() { listenClasses(); listenSubjects(); listenChapters(); bindAddEvents(); bindFilterEvents(); }
+
+    /* Classes */
+    function listenClasses() {
+      db.ref('classes').on('value', snap => { classesData = snap.val() || {}; renderClasses(); populateClassSelectors(); });
+    }
+    function renderClasses() {
+      const list = document.getElementById('classes-list');
+      const entries = Object.entries(classesData).sort((a,b) => (a[1].order||0)-(b[1].order||0));
+      if (!entries.length) { list.innerHTML = '<p style="color:var(--gray-400);">No classes added yet.</p>'; return; }
+      list.innerHTML = entries.map(([id,cls]) => '<div class="category-item"><span class="category-name">'+escapeHtml(cls.name)+' <span style="color:var(--gray-400);font-size:0.8rem;">(order: '+(cls.order||0)+')</span></span><div class="actions"><button class="btn btn-danger btn-sm" onclick="deleteClass(\''+id+'\',\''+escapeHtml(cls.name)+'\')">Delete</button></div></div>').join('');
+    }
+    function populateClassSelectors() {
+      const sorted = Object.entries(classesData).sort((a,b) => (a[1].order||0)-(b[1].order||0));
+      const opts = sorted.map(([id,cls]) => '<option value="'+id+'">'+escapeHtml(cls.name)+'</option>').join('');
+      document.getElementById('subject-class-filter').innerHTML = '<option value="">All Classes</option>' + opts;
+      document.getElementById('chapter-class-filter').innerHTML = '<option value="">All</option>' + opts;
+      document.getElementById('add-subject-class').innerHTML = '<option value="">Class</option>' + opts;
+    }
+
+    /* Subjects */
+    function listenSubjects() {
+      db.ref('subjects').on('value', snap => { subjectsData = snap.val() || {}; renderSubjects(); populateSubjectSelectors(); });
+    }
+    function renderSubjects(filterClassId) {
+      const list = document.getElementById('subjects-list');
+      let entries = Object.entries(subjectsData).sort((a,b) => (a[1].order||0)-(b[1].order||0));
+      if (filterClassId) entries = entries.filter(([_,s]) => s.classId === filterClassId);
+      if (!entries.length) { list.innerHTML = '<p style="color:var(--gray-400);">No subjects found.</p>'; return; }
+      list.innerHTML = entries.map(([id,sub]) => { const cls = classesData[sub.classId]||{}; return '<div class="category-item"><span class="category-name">'+escapeHtml(sub.name)+' <span style="color:var(--gray-400);font-size:0.8rem;">('+escapeHtml(cls.name||'?')+', order: '+(sub.order||0)+')</span></span><div class="actions"><button class="btn btn-danger btn-sm" onclick="deleteSubject(\''+id+'\',\''+escapeHtml(sub.name)+'\')">Delete</button></div></div>'; }).join('');
+    }
+    function populateSubjectSelectors() {
+      const sorted = Object.entries(subjectsData).sort((a,b) => (a[1].order||0)-(b[1].order||0));
+      document.getElementById('add-chapter-subject').innerHTML = '<option value="">Subject</option>' + sorted.map(([id,sub]) => { const cls = classesData[sub.classId]||{}; return '<option value="'+id+'">'+escapeHtml(sub.name)+' ('+escapeHtml(cls.name||'?')+')</option>'; }).join('');
+    }
+
+    /* Chapters */
+    function listenChapters() { db.ref('chapters').on('value', snap => { chaptersData = snap.val() || {}; renderChapters(); }); }
+    function renderChapters(filterSubjectId) {
+      const list = document.getElementById('chapters-list');
+      let entries = Object.entries(chaptersData).sort((a,b) => (a[1].order||0)-(b[1].order||0));
+      if (filterSubjectId) entries = entries.filter(([_,c]) => c.subjectId === filterSubjectId);
+      if (!entries.length) { list.innerHTML = '<p style="color:var(--gray-400);">No chapters found.</p>'; return; }
+      list.innerHTML = entries.map(([id,ch]) => { const sub = subjectsData[ch.subjectId]||{}; return '<div class="category-item"><span class="category-name">'+escapeHtml(ch.name)+' <span style="color:var(--gray-400);font-size:0.8rem;">('+escapeHtml(sub.name||'?')+', order: '+(ch.order||0)+')</span></span><div class="actions"><button class="btn btn-danger btn-sm" onclick="deleteChapter(\''+id+'\',\''+escapeHtml(ch.name)+'\')">Delete</button></div></div>'; }).join('');
+    }
+
+    /* Filters */
+    function bindFilterEvents() {
+      document.getElementById('subject-class-filter').addEventListener('change', function() { renderSubjects(this.value); });
+      document.getElementById('chapter-class-filter').addEventListener('change', function() {
+        const subFilter = document.getElementById('chapter-subject-filter');
+        subFilter.innerHTML = '<option value="">All</option>';
+        if (this.value) {
+          subFilter.disabled = false;
+          Object.entries(subjectsData).filter(([_,s]) => s.classId === this.value).sort((a,b) => (a[1].order||0)-(b[1].order||0)).forEach(([id,sub]) => { subFilter.innerHTML += '<option value="'+id+'">'+escapeHtml(sub.name)+'</option>'; });
+        } else { subFilter.disabled = true; }
+        renderChapters('');
+      });
+      document.getElementById('chapter-subject-filter').addEventListener('change', function() { renderChapters(this.value); });
+    }
+
+    /* Add */
+    function bindAddEvents() {
+      document.getElementById('add-class-btn').addEventListener('click', () => {
+        const name = document.getElementById('add-class-name').value.trim();
+        const order = parseInt(document.getElementById('add-class-order').value) || 0;
+        if (!name) { showToast('Enter a class name.', 'error'); return; }
+        db.ref('classes/' + generateId()).set({ name, order }).then(() => { showToast('"'+name+'" added.', 'success'); document.getElementById('add-class-name').value = ''; document.getElementById('add-class-order').value = ''; }).catch(err => showToast('Error: '+err.message, 'error'));
+      });
+      document.getElementById('add-subject-btn').addEventListener('click', () => {
+        const classId = document.getElementById('add-subject-class').value;
+        const name = document.getElementById('add-subject-name').value.trim();
+        const order = parseInt(document.getElementById('add-subject-order').value) || 0;
+        if (!classId || !name) { showToast('Select a class and enter subject name.', 'error'); return; }
+        db.ref('subjects/' + generateId()).set({ name, classId, order }).then(() => { showToast('"'+name+'" added.', 'success'); document.getElementById('add-subject-name').value = ''; document.getElementById('add-subject-order').value = ''; }).catch(err => showToast('Error: '+err.message, 'error'));
+      });
+      document.getElementById('add-chapter-btn').addEventListener('click', () => {
+        const subjectId = document.getElementById('add-chapter-subject').value;
+        const name = document.getElementById('add-chapter-name').value.trim();
+        const order = parseInt(document.getElementById('add-chapter-order').value) || 0;
+        if (!subjectId || !name) { showToast('Select a subject and enter chapter name.', 'error'); return; }
+        db.ref('chapters/' + generateId()).set({ name, subjectId, order }).then(() => { showToast('"'+name+'" added.', 'success'); document.getElementById('add-chapter-name').value = ''; document.getElementById('add-chapter-order').value = ''; }).catch(err => showToast('Error: '+err.message, 'error'));
+      });
+    }
+
+    /* Delete */
+    function deleteClass(id, name) { if (!confirm('Delete class "'+name+'"?')) return; db.ref('classes/'+id).remove().then(() => showToast('Deleted.','success')).catch(err => showToast('Error: '+err.message, 'error')); }
+    function deleteSubject(id, name) { if (!confirm('Delete subject "'+name+'"?')) return; db.ref('subjects/'+id).remove().then(() => showToast('Deleted.','success')).catch(err => showToast('Error: '+err.message, 'error')); }
+    function deleteChapter(id, name) { if (!confirm('Delete chapter "'+name+'"?')) return; db.ref('chapters/'+id).remove().then(() => showToast('Deleted.','success')).catch(err => showToast('Error: '+err.message, 'error')); }
+  </script>
+</body>
+</html>

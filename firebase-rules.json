@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "classes": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "subjects": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "chapters": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "resources": {
+      ".read": true,
+      ".write": "auth != null",
+      ".indexOn": ["dateAdded", "classId", "subjectId", "chapterId", "type"]
+    },
+    "news": {
+      ".read": true,
+      ".write": "auth != null",
+      ".indexOn": ["date"]
+    }
+  }
+}
